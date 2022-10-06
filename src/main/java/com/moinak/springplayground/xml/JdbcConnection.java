@@ -1,5 +1,8 @@
 package com.moinak.springplayground.xml;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class JdbcConnection {
 	private String id = "999";
 
