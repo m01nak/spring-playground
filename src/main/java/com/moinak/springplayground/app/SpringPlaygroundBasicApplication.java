@@ -1,4 +1,4 @@
-package com.moinak.springplayground;
+package com.moinak.springplayground.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
