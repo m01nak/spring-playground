@@ -1,17 +1,17 @@
-package com.moinak.springplayground;
+package com.moinak.springplayground.app;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
-import com.moinak.springplayground.basic.MessagePrinter;
-import com.moinak.springplayground.basic.MessagePrinterImpl;
 import com.moinak.springplayground.scope.JDBCConnection;
 import com.moinak.springplayground.scope.OrderDAO;
 
 @SpringBootApplication
+@ComponentScan("com.moinak.springplayground.scope")
 public class SpringPlaygroundScopeApplication {
 	
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringPlaygroundScopeApplication.class);

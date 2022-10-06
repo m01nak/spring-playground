@@ -1,17 +1,18 @@
-package com.moinak.springplayground;
+package com.moinak.springplayground.app;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.moinak.springplayground.basic.MessagePrinter;
 import com.moinak.springplayground.basic.MessagePrinterImpl;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan("com.moinak.springplayground.basic")
 public class SpringPlaygroundBasicApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext app = SpringApplication.run(SpringPlaygroundBasicApplication.class, args);
+		AnnotationConfigApplicationContext app = new AnnotationConfigApplicationContext(SpringPlaygroundBasicApplication.class);
 		
 		MessagePrinter messagePrinter1 = app.getBean(MessagePrinterImpl.class);
 		MessagePrinter messagePrinter2 = app.getBean(MessagePrinterImpl.class);
