@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+<<<<<<< HEAD
 import org.springframework.context.annotation.ComponentScan;
 
 import com.moinak.springplayground.scope.JDBCConnection;
@@ -12,6 +13,14 @@ import com.moinak.springplayground.scope.OrderDAO;
 
 @SpringBootApplication
 @ComponentScan("com.moinak.springplayground.scope")
+=======
+
+import com.moinak.springplayground.basic.MessagePrinter;
+import com.moinak.springplayground.basic.MessagePrinterImpl;
+import com.moinak.springplayground.scope.JDBCConnection;
+import com.moinak.springplayground.scope.OrderDAO;
+
+@SpringBootApplication
 public class SpringPlaygroundScopeApplication {
 	
 	private static Logger LOGGER = LoggerFactory.getLogger(SpringPlaygroundScopeApplication.class);
