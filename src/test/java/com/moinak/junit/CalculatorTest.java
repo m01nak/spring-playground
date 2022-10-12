@@ -1,4 +1,4 @@
-package con.moinak.junit;
+package com.moinak.junit;
 
 import static org.junit.Assert.assertEquals;
 
