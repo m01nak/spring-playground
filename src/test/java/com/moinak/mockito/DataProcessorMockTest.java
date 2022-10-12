@@ -5,17 +5,26 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
+@ExtendWith(MockitoExtension.class)
 class DataProcessorMockTest {
 
+	@Mock
+	private DataSupply dataSupplyMock;
+	
+	@InjectMocks
+	private DataProcessor dataProcessor;
+	
 	@Test
 	void maxTest_emptyArray() {
 		
 		int[] emptyArray = new int[] {};
 		
-		DataSupply dataSupplyMock = mock(DataSupply.class);
 		when(dataSupplyMock.getData()).thenReturn(emptyArray);
-		DataProcessor dataProcessor = new DataProcessor(dataSupplyMock);
 		assertEquals(Double.MIN_VALUE, dataProcessor.max(),0.0000000001);
 	}
 	
@@ -24,9 +33,7 @@ class DataProcessorMockTest {
 		
 		int[] singletonArray = new int[] {10};
 		
-		DataSupply dataSupplyMock = mock(DataSupply.class);
 		when(dataSupplyMock.getData()).thenReturn(singletonArray);
-		DataProcessor dataProcessor = new DataProcessor(dataSupplyMock);
 		assertEquals(10.0, dataProcessor.max(),0.0000000001);
 	}
 	
@@ -35,9 +42,7 @@ class DataProcessorMockTest {
 		
 		int[] multiElementArray = new int[] {3,5,10,9,16,11,1,2,3,33};
 		
-		DataSupply dataSupplyMock = mock(DataSupply.class);
 		when(dataSupplyMock.getData()).thenReturn(multiElementArray);
-		DataProcessor dataProcessor = new DataProcessor(dataSupplyMock);
 		assertEquals(33, dataProcessor.max(),0.0000000001);
 	}
 
